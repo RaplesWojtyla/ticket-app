@@ -10,10 +10,12 @@ import 'package:ticket_app/base/widgets/text_styles_second.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
+  final bool wholeScreen;
 
   const TicketView({
     super.key,
-    required this.ticket
+    required this.ticket,
+    this.wholeScreen = false
   });
 
   @override
@@ -24,7 +26,7 @@ class TicketView extends StatelessWidget {
       width: size.width * 0.85,
       height: 189,
       child: Container(
-        margin: const EdgeInsets.only(right: 16),
+        margin: EdgeInsets.only(right: !wholeScreen ? 16 : 0),
         child: Column(
           children: [
             // Blue part of the ticket
@@ -88,7 +90,7 @@ class TicketView extends StatelessWidget {
                             alignment: TextAlign.end
                         ),
                       ),
-                    ],
+                    ]
                   ),
                 ],
               ),
