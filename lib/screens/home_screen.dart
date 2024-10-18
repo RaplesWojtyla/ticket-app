@@ -6,6 +6,7 @@ import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/utils/app_json.dart';
 import 'package:ticket_app/base/widgets/app_double_text.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
+import 'package:ticket_app/screens/widgets/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,6 +21,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,13 +64,32 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                const AppDoubleText(bigText: "Upcoming Flights", smallText: "View all"),
+                AppDoubleText(
+                  bigText: "Upcoming Flights",
+                  smallText: "View all",
+                  func: () => Navigator.pushNamed(context, "all_tickets")
+                ),
                 const SizedBox(height: 24,),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: ticketList.take(2).map(
+                    children: ticketList.take(3).map(
                       (singleTicket) => TicketView(ticket: singleTicket)
+                    ).toList(),
+                  )
+                ),
+                const SizedBox(height: 40),
+                AppDoubleText(
+                  bigText: "Hotels",
+                  smallText: "View all",
+                  func: () => Navigator.pushNamed(context, "all_hotels"),
+                ),
+                const SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotelList.take(3).map(
+                      (singleHotel) => Hotel(hotel: singleHotel)
                     ).toList(),
                   )
                 ),

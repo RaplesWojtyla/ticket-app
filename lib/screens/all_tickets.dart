@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/utils/app_json.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
@@ -19,7 +18,7 @@ class AllTickets extends StatelessWidget {
               children: ticketList
                   .map((singleTicket) =>
                       Container(
-                        margin: EdgeInsets.only(bottom: 20),
+                        margin: const EdgeInsets.only(bottom: 20),
                         child: TicketView(ticket: singleTicket, wholeScreen: true,)
                       ))
                   .toList(),

@@ -1,3 +1,5 @@
+import 'package:ticket_app/base/res/media.dart';
+
 List<Map<String, dynamic>> ticketList = [
   {
     "from": {
@@ -54,5 +56,26 @@ List<Map<String, dynamic>> ticketList = [
     "date": "10 MAY",
     "departure_time": "09:00 PM",
     "number": "35"
+  },
+];
+
+List<Map<String, dynamic>> hotelList = [
+  {
+    "image": AppMedia.hotelRoom1,
+    "place": "Open Space",
+    "destination": "London",
+    "price": 25
+  },
+  {
+    "image": AppMedia.cityView1,
+    "place": "Global Will",
+    "destination": "London",
+    "price": 40
+  },
+  {
+    "image": AppMedia.poolView1,
+    "place": "Best City Pool",
+    "destination": "Dubai",
+    "price": 68
   },
 ];
