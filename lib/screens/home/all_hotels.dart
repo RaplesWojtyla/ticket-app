@@ -14,7 +14,7 @@ class AllHotels extends StatelessWidget {
       body: ListView(
         children: hotelList
             .map((singleHotel) => Container(
-                margin: const EdgeInsets.only(bottom: 30),
+                margin: const EdgeInsets.all(30),
                 child: Hotel(hotel: singleHotel)))
             .toList(),
       ),
